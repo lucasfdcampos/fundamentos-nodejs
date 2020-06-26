@@ -21,6 +21,10 @@ class CreateTransactionService {
       throw Error('Invalid type.');
     }
 
+    if (value < 0) {
+      throw Error('Invalid value.');
+    }
+
     if (type === 'outcome' && value > total) {
       throw Error('Insufficient Funds.');
     }
